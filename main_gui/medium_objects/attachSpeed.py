@@ -1,5 +1,5 @@
 
-from overall.basic_objects.numberDisplay import number_display
+from main_gui.basic_objects.numberDisplay import number_display
 
 class attach_speed():
     def __init__(self, master, grid_coord, grid, window_width, window_height):

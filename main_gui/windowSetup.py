@@ -1,10 +1,10 @@
-from overall.config_file import configuration
-from overall.windowUpdate import window_update 
-from overall.medium_objects.manageGrid import manage_grid
-from overall.medium_objects.attachSpeed import attach_speed 
-from overall.basic_objects.numberDisplay import number_display 
-from overall.basic_objects.Arrow import arrow
-from overall.basic_objects.textManager import text_manager
+from main_gui.config_file import configuration
+from main_gui.windowUpdate import window_update 
+from main_gui.medium_objects.manageGrid import manage_grid
+from main_gui.medium_objects.attachSpeed import attach_speed 
+from main_gui.basic_objects.numberDisplay import number_display 
+from main_gui.basic_objects.Arrow import arrow
+from main_gui.basic_objects.textManager import text_manager
 
 
 
