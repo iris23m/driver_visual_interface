@@ -6,6 +6,7 @@ class program_loop:
  
     def update1(self): 
         'updates the values and schedules the other update function to be called- the two functions pass between each other'
+        #the idea is that these would eventually be updated by some CAN function
         self.inputSpeed =160
         self.inputLeftIndicatorOn = True
         self.inputRightIndicatorOn = False
