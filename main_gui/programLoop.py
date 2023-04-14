@@ -1,4 +1,5 @@
 class program_loop:
+    'main loop to keep updating everything- uses the window_update object that was first created in the window_setup object '
     def __init__(self, master, windowSetup):
         self.master = master
         self.windowSetup = windowSetup
@@ -10,7 +11,8 @@ class program_loop:
         self.inputSpeed =160
         self.inputLeftIndicatorOn = True
         self.inputRightIndicatorOn = False
-        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn))
+        self.hazardsOn = True
+        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn), bool(self.hazardsOn))
         
         self.master.after(500, self.update2)
 
@@ -20,7 +22,8 @@ class program_loop:
         self.inputSpeed = 161
         self.inputLeftIndicatorOn = True
         self.inputRightIndicatorOn = False
-        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn))
+        self.hazardsOn = True
+        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn), bool(self.hazardsOn))
 
         self.master.after(500, self.update1)
     

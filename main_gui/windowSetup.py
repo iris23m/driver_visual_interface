@@ -5,14 +5,12 @@ from main_gui.medium_objects.attachSpeed import attach_speed
 from main_gui.basic_objects.numberDisplay import number_display 
 from main_gui.basic_objects.Arrow import arrow
 from main_gui.basic_objects.textManager import text_manager
-
-
-
+from main_gui.basic_objects.displayImage import display_image
 
 import tkinter as tk
 
-
 class window_setup:
+    'sets up the window, creates all the objects, creates the window updater from the windows_update class that can be used later'
     def __init__(self):
         config_values = configuration()
         self.windowWidth = config_values.WINDOW_WIDTH
@@ -24,10 +22,13 @@ class window_setup:
         self.gridWidth = self.windowWidth/config_values.COLUMNS
         self.gridHeight = self.windowHeight/config_values.ROWS
         status = True
+    
+        
         self.create_left_arrow()
         self.create_right_arrow()
         self.create_speed()
         self.create_base_text()
+        self.create_warning_lights()
         self.update_window()
 
     def create_left_arrow(self):
@@ -37,7 +38,7 @@ class window_setup:
      
     def create_right_arrow(self):
         rightArrowDirection = 'right'
-        rightArrowCanvas = self.grid.canvaslist[0][7]
+        rightArrowCanvas = self.grid.canvaslist[0][6]
         self.rightArrow = arrow(self.window, rightArrowDirection, rightArrowCanvas, self.gridWidth, self.gridHeight,1.5)
 
     def create_speed(self):
@@ -56,5 +57,8 @@ class window_setup:
             solarPowerUnitsText = text_manager(self.window, [4, 2], self.grid, self.windowWidth, self.windowHeight)
             solarPowerUnitsText.coords_size('kW')
 
+    def create_warning_lights(self):
+        self.hazardLight = display_image(self.window, "hazard_light.png" , [0,3], self.grid, [30,30], self.windowWidth, self.windowHeight)
+
     def update_window(self):
-        self.windowUpdater = window_update(self.window, self.speedObject, self.leftArrow, self.rightArrow)
+        self.windowUpdater = window_update(self.window, self.speedObject, self.leftArrow, self.rightArrow,self.hazardLight )
