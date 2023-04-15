@@ -5,12 +5,15 @@ class configuration:
 
     def setup(self):
         self.WINDOW_HEIGHT = 300
-        self.WINDOW_WIDTH = 400
-        self.ROWS = 9
+        self.WINDOW_WIDTH = 450
+        self.ROWS = 12
         self.COLUMNS = 8
         #key needs to have a space between , and 2nd number to work
         self.SPANS = {'[1, 0]':[3,6], '[0, 3]':[1,2], '[4, 0]':[1,2], 
-         '[5, 0]':[1,2]}
+         '[5, 0]':[1,2], '[6, 0]':[1,2],'[7, 0]':[1,2],'[8, 0]':[1,2],
+         '[9, 0]':[1,2], '[10, 0]':[1,2], '[4, 4]':[1,2],'[5, 4]':[1,2], '[6, 4]':[1,2],
+         '[7, 4]':[1,2], '[8, 4]':[1,2], '[9, 4]':[1,2], 
+         '[10, 4]':[1,2]}
 
         
 

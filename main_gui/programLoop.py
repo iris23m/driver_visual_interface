@@ -12,7 +12,14 @@ class program_loop:
         self.inputLeftIndicatorOn = True
         self.inputRightIndicatorOn = False
         self.hazardsOn = True
-        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn), bool(self.hazardsOn))
+        self.battDrain = '100'
+        self.solarPower = '20'
+        self.updatingTextValues= ['100', '20', '1', 'NO COMMS','NO COMMS','NO COMMS','NO COMMS','NO COMMS',
+                                  'NO COMMS','NO COMMS','NO COMMS']
+        self.driveMode = 'N'
+        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn),
+                                                       bool(self.inputRightIndicatorOn), bool(self.hazardsOn),
+                                                         self.updatingTextValues, self.driveMode)
         
         self.master.after(500, self.update2)
 
@@ -23,7 +30,12 @@ class program_loop:
         self.inputLeftIndicatorOn = True
         self.inputRightIndicatorOn = False
         self.hazardsOn = True
-        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn), bool(self.inputRightIndicatorOn), bool(self.hazardsOn))
+        self.updatingTextValues = ['100', '20', '1', 'NO COMMS','NO COMMS','NO COMMS','NO COMMS','NO COMMS',
+                                  'NO COMMS','NO COMMS','NO COMMS', 'NO COMMS']
+        self.driveMode = 'N'
+        self.windowSetup.windowUpdater.general_update(int(self.inputSpeed), bool(self.inputLeftIndicatorOn),
+                                                       bool(self.inputRightIndicatorOn), bool(self.hazardsOn),
+                                                         self.updatingTextValues, self.driveMode)
 
         self.master.after(500, self.update1)
     
