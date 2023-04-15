@@ -31,9 +31,17 @@ class attach_speed():
 
     def attach_values(self, number):
         digits = [int(n) for n in str(number)]
-        self.digit1.get_colours(digits[0])
+        try:
+            self.digit1.get_colours(digits[-3])
+        except:
+            self.digit1.get_colours(0)
         self.digit1.draw_shape()
-        self.digit2.get_colours(digits[1])
+        
+        try:
+            self.digit2.get_colours(digits[-2])
+        except:
+            self.digit2.get_colours(0)
         self.digit2.draw_shape()
-        self.digit3.get_colours(digits[2])
+        
+        self.digit3.get_colours(digits[-1])
         self.digit3.draw_shape()
