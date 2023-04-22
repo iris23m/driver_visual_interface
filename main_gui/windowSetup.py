@@ -84,48 +84,48 @@ class window_setup:
             self.updatableTextObjectsList.append(self.bmuStatusValueText)       
 
     def create_motorStatuses(self):
-            LMotorStatusText = text_manager(self.window, [9, 3], self.grid, self.windowWidth, self.windowHeight)
+            LMotorStatusText = text_manager(self.window, [8, 3], self.grid, self.windowWidth, self.windowHeight)
             LMotorStatusText.display_text('L Motor: ')
     
-            self.LMotorStatusValueText = text_manager(self.window, [9, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.LMotorStatusValueText = text_manager(self.window, [8, 4], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.LMotorStatusValueText)       
 
-            RMotorStatusText = text_manager(self.window, [10, 3], self.grid, self.windowWidth, self.windowHeight)
+            RMotorStatusText = text_manager(self.window, [9, 3], self.grid, self.windowWidth, self.windowHeight)
             RMotorStatusText.display_text('R Motor: ')
     
-            self.RMotorStatusValueText = text_manager(self.window, [10, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.RMotorStatusValueText = text_manager(self.window, [9, 4], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.RMotorStatusValueText) 
 
     def create_ivtStatuses(self):
-            ivtFrontStatusText = text_manager(self.window, [4, 3], self.grid, self.windowWidth, self.windowHeight)
+            ivtFrontStatusText = text_manager(self.window, [9, 0], self.grid, self.windowWidth, self.windowHeight)
             ivtFrontStatusText.display_text('IVT Front: ')
     
-            self.ivtFrontStatusValueText = text_manager(self.window, [4, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.ivtFrontStatusValueText = text_manager(self.window, [9, 1], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.ivtFrontStatusValueText)       
 
-            ivtRearStatusText = text_manager(self.window, [5, 3], self.grid, self.windowWidth, self.windowHeight)
+            ivtRearStatusText = text_manager(self.window, [10, 0], self.grid, self.windowWidth, self.windowHeight)
             ivtRearStatusText.display_text('IVT Rear: ')
     
-            self.ivtRearStatusValueText = text_manager(self.window, [5, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.ivtRearStatusValueText = text_manager(self.window, [10, 1], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.ivtRearStatusValueText) 
 
     def create_mpptStatuses(self):
-            mppt1StatusText = text_manager(self.window, [6, 3], self.grid, self.windowWidth, self.windowHeight)
+            mppt1StatusText = text_manager(self.window, [5, 3], self.grid, self.windowWidth, self.windowHeight)
             mppt1StatusText.display_text('MPPT1: ')
     
-            self.mppt1StatusValueText = text_manager(self.window, [6, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.mppt1StatusValueText = text_manager(self.window, [5, 4], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.mppt1StatusValueText)    
 
-            mppt2StatusText = text_manager(self.window, [7, 3], self.grid, self.windowWidth, self.windowHeight)
+            mppt2StatusText = text_manager(self.window, [6, 3], self.grid, self.windowWidth, self.windowHeight)
             mppt2StatusText.display_text('MPPT2: ')
     
-            self.mppt2StatusValueText = text_manager(self.window, [7, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.mppt2StatusValueText = text_manager(self.window, [6, 4], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.mppt2StatusValueText)   
 
-            mppt3StatusText = text_manager(self.window, [8, 3], self.grid, self.windowWidth, self.windowHeight)
+            mppt3StatusText = text_manager(self.window, [7, 3], self.grid, self.windowWidth, self.windowHeight)
             mppt3StatusText.display_text('MPPT3: ')
     
-            self.mppt3StatusValueText = text_manager(self.window, [8, 4], self.grid, self.windowWidth, self.windowHeight)
+            self.mppt3StatusValueText = text_manager(self.window, [7, 4], self.grid, self.windowWidth, self.windowHeight)
             self.updatableTextObjectsList.append(self.mppt3StatusValueText) 
 
     def create_driveMode(self):
