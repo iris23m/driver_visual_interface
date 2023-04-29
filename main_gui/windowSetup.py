@@ -10,6 +10,7 @@ from main_gui.basic_objects.displayImage import display_image
 import tkinter as tk
 
 class window_setup:
+    
     'sets up the window, creates all the objects, creates the window updater from the windows_update class that can be used later'
     def __init__(self):
         config_values = configuration()
@@ -51,88 +52,66 @@ class window_setup:
 
     def create_speed(self):
         self.speedObject = attach_speed(self.window, [1,0], self.grid, self.windowWidth, self.windowHeight)
-
+    
+    def create_text_object(self, text, position, displayNow = True):
+        textObject = text_manager(self.window, position, self.grid, self.windowWidth, self.windowHeight)
+        if displayNow:
+              textObject.display_text(text)
+        else:
+              self.updatableTextObjectsList.append(textObject)
+        return textObject
+          
     def create_battDrain(self):
-            battDrainText = text_manager(self.window, [5, 0], self.grid, self.windowWidth, self.windowHeight)
-            battDrainText.display_text('Batt. drain: ')
-            battDrainUnitsText = text_manager(self.window, [5, 2], self.grid, self.windowWidth, self.windowHeight)
-            battDrainUnitsText.display_text('kW')
-            self.battDrainValueText = text_manager(self.window, [5, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.battDrainValueText)
+        self.battDrainText = self.create_text_object('Batt. drain: ', [5, 0])
+        self.battDrainUnitsText = self.create_text_object('kW', [5, 2])
+        self.battDrainValueText = self.create_text_object(None, [5,1], False)
 
     def create_solarPower(self):
-            solarPowerText = text_manager(self.window, [6, 0], self.grid, self.windowWidth, self.windowHeight)
-            solarPowerText.display_text('Solar power: ')
-            solarPowerUnitsText = text_manager(self.window, [6, 2], self.grid, self.windowWidth, self.windowHeight)
-            solarPowerUnitsText.display_text('kW')
-            self.solarPowerValueText = text_manager(self.window, [6, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.solarPowerValueText)    
+        self.solarPowerText = self.create_text_object('Solar power: ', [6, 0])
+        self.solarPowerUnitsText = self.create_text_object('kW', [6, 2])
+        self.solarPowerValueText = self.create_text_object(None, [6,1], False)
 
     def create_busVolts(self):
-            busVoltsText = text_manager(self.window, [7, 0], self.grid, self.windowWidth, self.windowHeight)
-            busVoltsText.display_text('Bus volts: ')
-            busVoltsUnitsText = text_manager(self.window, [7, 2], self.grid, self.windowWidth, self.windowHeight)
-            busVoltsUnitsText.display_text('kW')
-            self.busVoltsValueText = text_manager(self.window, [7, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.busVoltsValueText)     
+        self.busVoltsText = self.create_text_object('Bus volts: ', [7, 0])
+        self.busVoltsUnitsText = self.create_text_object('kW', [7, 2])
+        self.busVoltsValueText = self.create_text_object(None, [7,1], False) 
 
     def create_bmuStatus(self):
-            bmuStatusText = text_manager(self.window, [8, 0], self.grid, self.windowWidth, self.windowHeight)
-            bmuStatusText.display_text('BMU: ')
-    
-            self.bmuStatusValueText = text_manager(self.window, [8, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.bmuStatusValueText)       
+        self.bmuStatusText = self.create_text_object('BMU: ', [8, 0])
+        self.bmuStatusValueText = self.create_text_object(None, [8, 1], False)
 
     def create_motorStatuses(self):
-            LMotorStatusText = text_manager(self.window, [8, 3], self.grid, self.windowWidth, self.windowHeight)
-            LMotorStatusText.display_text('L Motor: ')
+        self.LMotorStatusText = self.create_text_object('L Motor: ', [8, 3])
+        self.LMotorStatusValueText = self.create_text_object(None, [8, 4], False)
     
-            self.LMotorStatusValueText = text_manager(self.window, [8, 4], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.LMotorStatusValueText)       
-
-            RMotorStatusText = text_manager(self.window, [9, 3], self.grid, self.windowWidth, self.windowHeight)
-            RMotorStatusText.display_text('R Motor: ')
-    
-            self.RMotorStatusValueText = text_manager(self.window, [9, 4], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.RMotorStatusValueText) 
+        self.RMotorStatusText = self.create_text_object('R Motor: ', [9, 3])
+        self.RMotorStatusValueText = self.create_text_object(None, [9, 4], False)
 
     def create_ivtStatuses(self):
-            ivtFrontStatusText = text_manager(self.window, [9, 0], self.grid, self.windowWidth, self.windowHeight)
-            ivtFrontStatusText.display_text('IVT Front: ')
-    
-            self.ivtFrontStatusValueText = text_manager(self.window, [9, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.ivtFrontStatusValueText)       
+        self.ivtFrontStatusText = self.create_text_object('IVT Front: ', [9, 0])
+        self.ivtFrontStatusValueText = self.create_text_object(None, [9, 1], False)
 
-            ivtRearStatusText = text_manager(self.window, [10, 0], self.grid, self.windowWidth, self.windowHeight)
-            ivtRearStatusText.display_text('IVT Rear: ')
-    
-            self.ivtRearStatusValueText = text_manager(self.window, [10, 1], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.ivtRearStatusValueText) 
+        self.ivtRearStatusText = self.create_text_object('IVT Rear: ', [10, 0])
+        self.ivtRearStatusValueText = self.create_text_object(None, [10, 1], False)
 
     def create_mpptStatuses(self):
-            mppt1StatusText = text_manager(self.window, [5, 3], self.grid, self.windowWidth, self.windowHeight)
-            mppt1StatusText.display_text('MPPT1: ')
+            
+        self.mppt1StatusText = self.create_text_object('MPPT1: ', [5, 3])
+        self.mppt1StatusValueText = self.create_text_object(None, [5, 4], False)
     
-            self.mppt1StatusValueText = text_manager(self.window, [5, 4], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.mppt1StatusValueText)    
-
-            mppt2StatusText = text_manager(self.window, [6, 3], self.grid, self.windowWidth, self.windowHeight)
-            mppt2StatusText.display_text('MPPT2: ')
+        self.mppt2StatusText = self.create_text_object('MPPT2: ', [6, 3])
+        self.mppt2StatusValueText = self.create_text_object(None, [6, 4], False)
     
-            self.mppt2StatusValueText = text_manager(self.window, [6, 4], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.mppt2StatusValueText)   
-
-            mppt3StatusText = text_manager(self.window, [7, 3], self.grid, self.windowWidth, self.windowHeight)
-            mppt3StatusText.display_text('MPPT3: ')
-    
-            self.mppt3StatusValueText = text_manager(self.window, [7, 4], self.grid, self.windowWidth, self.windowHeight)
-            self.updatableTextObjectsList.append(self.mppt3StatusValueText) 
+        self.mppt3StatusText = self.create_text_object('MPPT3: ', [7, 3])
+        self.mppt3StatusValueText = self.create_text_object(None, [7, 4], False)
 
     def create_driveMode(self):
-            self.driveModeObject = text_manager(self.window, [11, 3], self.grid, self.windowWidth, self.windowHeight)         
+        self.DdriveModeObject = text_manager(self.window, [11, 2], self.grid, self.windowWidth, self.windowHeight)
+        self.NdriveModeObject = text_manager(self.window, [11, 3], self.grid, self.windowWidth, self.windowHeight)  
+        self.RdriveModeObject = text_manager(self.window, [11, 4], self.grid, self.windowWidth, self.windowHeight)           
 
     def create_warning_lights(self):
         self.hazardLight = display_image(self.window, "hazard_light.png" , [0,3], self.grid, [25,25], self.windowWidth, self.windowHeight)
 
     def update_window(self):
-        self.windowUpdater = window_update(self.window, self.speedObject, self.leftArrow, self.rightArrow,self.hazardLight, self.updatableTextObjectsList, self.driveModeObject)
+        self.windowUpdater = window_update(self.window, self.speedObject, self.leftArrow, self.rightArrow,self.hazardLight, self.updatableTextObjectsList, self.DdriveModeObject, self.NdriveModeObject, self.RdriveModeObject)

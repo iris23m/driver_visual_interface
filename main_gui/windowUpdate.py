@@ -2,14 +2,16 @@
 
 class window_update:
     'used to update everything- the general_update method calls all of the other updating methods'
-    def __init__(self, master, speedObject, leftArrow, rightArrow, hazardLight, updatableTextObjectsList, driveModeObject):
+    def __init__(self, master, speedObject, leftArrow, rightArrow, hazardLight, updatableTextObjectsList, DdriveModeObject, NdriveModeObject, RdriveModeObject):
         self.master = master
         self.speedObject = speedObject
         self.leftArrow = leftArrow
         self.rightArrow = rightArrow
         self.hazardLight = hazardLight
         self.updatableTextObjectsList = updatableTextObjectsList
-        self.driveModeObject = driveModeObject
+        self.DdriveModeObject = DdriveModeObject
+        self.NdriveModeObject = NdriveModeObject
+        self.RdriveModeObject = RdriveModeObject
 
     def general_update(self, speedValue, leftIndicationOn, rightIndicationOn, hazardOn, updatingTextValues, driveMode):
         self.speedValue = speedValue
@@ -40,7 +42,20 @@ class window_update:
             self.updatableTextObjectsList[i].display_text(self.updatingTextValues[i])
 
     def drive_mode_update(self):
-        self.driveModeObject.display_text(self.driveMode)
+        #self.driveModeObject.display_text(self.driveMode, True, 'grey')
+        Dcolour = 'grey11'
+        Ncolour = 'grey11'
+        Rcolour = 'grey11'
+        if self.driveMode == 'D':
+            Dcolour = 'white'
+        elif self.driveMode == 'N':
+            Ncolour = 'white'
+        elif self.driveMode == 'R':
+            Rcolour = 'white'
+    
+        self.DdriveModeObject.display_text('D', True, Dcolour)
+        self.RdriveModeObject.display_text('R', True, Rcolour)
+        self.NdriveModeObject.display_text('N', True, Ncolour)
       
 
 

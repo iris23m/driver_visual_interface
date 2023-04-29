@@ -21,8 +21,10 @@ class text_manager:
         self.font = 'Arial ' + str(size) #+ ' bold'
         self.canvasObject = self.grid.canvaslist[self.gridCoord[0]][self.gridCoord[1]]
 
-    def display_text(self, text):
+    def display_text(self, text, isBold=False, colour= 'white'):
         self.canvasObject.create_rectangle(0,0,self.boxWidth, self.boxHeight, fill = 'black' )
-        self.canvasObject.create_text(self.x, self.y, text=text, fill="white", font=self.font)
+        if isBold:
+            self.font = self.font + ' bold'
+        self.canvasObject.create_text(self.x, self.y, text=text, fill=colour, font=self.font)
 
     

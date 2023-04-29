@@ -25,7 +25,7 @@ class manage_grid():
         canvas= tk.Canvas (
                         master = self.master,
                         bg = "black",
-                        highlightthickness=1
+                        highlightthickness=0
                     )
         self.canvaslist[x].append(canvas)
 

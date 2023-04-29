@@ -4,8 +4,8 @@ class configuration:
         self.setup()
 
     def setup(self):
-        self.WINDOW_HEIGHT = 300
-        self.WINDOW_WIDTH = 450
+        self.WINDOW_HEIGHT = 480
+        self.WINDOW_WIDTH = 800
         self.ROWS = 12
         self.COLUMNS = 8
         #key needs to have a space between , and 2nd number to work

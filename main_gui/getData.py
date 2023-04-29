@@ -15,5 +15,11 @@ class dataFetcher:
         self.updatingTextValues= ['100', '20', '1', 'NO COMMS','NO COMMS','NO COMMS','NO COMMS','NO COMMS',
                                   'NO COMMS','NO COMMS','NO COMMS']
         self.driveMode = 'N'
+        if self.counter > 10:
+            self.driveMode = 'D'
+    
+        if self.counter > 20:
+            self.driveMode = 'N'
+        
 
 

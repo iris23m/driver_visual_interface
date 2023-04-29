@@ -45,7 +45,8 @@ class number_display:
         y7b = self.y2 - offset 
         rightBottomVertical = [self.x2, y5a, self.x2, y5b]
 
-        self.allLines = [topHorizontal, middleHorizontal, bottomHorizontal, leftTopVertical, leftBottomVertical, rightTopVertical, rightBottomVertical]
+        self.allLines = [topHorizontal, middleHorizontal, bottomHorizontal, leftTopVertical, 
+                         leftBottomVertical, rightTopVertical, rightBottomVertical]
         self.draw_shape()
 
     def draw_shape(self):
@@ -66,4 +67,8 @@ class number_display:
             [on, off, off, off, off, on, on],
             [on, on, on, on, on, on, on],
             [on, on, on, on, off, on, on]]
-        self.colours = colours[number]
+        
+        #in case of an input that isn't between 1 and 9
+        try:
+            self.colours = colours[number]
+        except: self.colours = [off, on, off, off, off, off, off]
